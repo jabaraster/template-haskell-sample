@@ -1,0 +1,54 @@
+cabal-version: 2.2
+
+-- This file has been generated from package.yaml by hpack version 0.37.0.
+--
+-- see: https://github.com/sol/hpack
+
+name:           template-haskell-sample
+version:        0.1.0.0
+description:    Please see the README on GitHub
+homepage:       https://github.com/jabaraster/template-haskell-sample#readme
+bug-reports:    https://github.com/jabaraster/template-haskell-sample/issues
+author:         jabaraster
+maintainer:     jabaraster@gmail.com
+copyright:      2024 jabaraster
+license:        BSD-3-Clause
+build-type:     Simple
+
+source-repository head
+  type: git
+  location: https://github.com/jabaraster/template-haskell-sample
+
+library
+  exposed-modules:
+      Lib
+      Messages
+      Messages.Internal
+  other-modules:
+      Paths_template_haskell_sample
+  autogen-modules:
+      Paths_template_haskell_sample
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
+  build-depends:
+      base >=4.7 && <5
+    , template-haskell >=2.20
+    , text
+  default-language: Haskell2010
+
+executable template-haskell-sample-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_template_haskell_sample
+  autogen-modules:
+      Paths_template_haskell_sample
+  hs-source-dirs:
+      app
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , template-haskell >=2.20
+    , template-haskell-sample
+    , text
+  default-language: Haskell2010
